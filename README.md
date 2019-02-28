@@ -52,3 +52,15 @@ Download and save media items
 ```bash
 php artisan process:downloads
 ```
+
+Add a new subreddit to crawl
+
+```bash
+php artisan sub:add
+```
+
+Remove a subreddit from your watch list. Note: this does not remove already downloaded files.
+
+```bash
+php artisan sub:delete
+```
