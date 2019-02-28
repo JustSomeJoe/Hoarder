@@ -53,6 +53,12 @@ Download and save media items
 php artisan process:downloads
 ```
 
+List subs you are watching
+
+```bash
+php artisan sub:list
+```
+
 Add a new subreddit to crawl
 
 ```bash
