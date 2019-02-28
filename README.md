@@ -62,11 +62,11 @@ php artisan sub:list
 Add a new subreddit to crawl
 
 ```bash
-php artisan sub:add
+php artisan sub:add someSubName
 ```
 
 Remove a subreddit from your watch list. Note: this does not remove already downloaded files.
 
 ```bash
-php artisan sub:delete
+php artisan sub:delete someSubName
 ```
