@@ -8,11 +8,11 @@ Copy contents of .env.example into .env and update with local settings
 
 `DB_DATABASE:` Your database name
 
-`- DB_USERNAME:` Database user name
+`DB_USERNAME:` Database user name
 
-`- DB_PASSWORD:` Database password
+`DB_PASSWORD:` Database password
 
-`- DOWNLOAD_PATH:` Literal path to downloads directory
+`DOWNLOAD_PATH:` Literal path to downloads directory
 
 ```bash
 $ composer install

@@ -23,7 +23,7 @@ class Subreddits extends Migration
         });
 
         $default = [
-            'legalteens'
+            'gonewild'
         ];
 
         foreach($default as $temp) {
