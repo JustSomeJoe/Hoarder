@@ -27,6 +27,12 @@ Class FileDownload extends Hoarder {
 			return false;
 		}
 
+		try {
+			self::isWritable();
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+
 		$path = parent::buildDownloadPath($image);
 
 		self::save(
@@ -209,7 +215,7 @@ Class FileDownload extends Hoarder {
 			return false;
 		}
 
-		if($this->image->type == 'image/jpeg' || $this->image->type == 'image/jpg') {
+		if(in_array($this->image->type, ['image/jpeg','image/jpg','image/png'])) {
 
 			$hasher = new ImageHash(new DifferenceHash());
 

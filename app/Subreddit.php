@@ -27,6 +27,7 @@ class Subreddit extends Model
 
     public function scopeFetchOneToScrape($query)
     {
+        $query->whereRaw('last_checked < DATE_SUB(now(), INTERVAL 1 HOUR)');
         $query->where('status', 200);
         $query->orderBy('last_checked', 'ASC');
 
@@ -45,13 +46,6 @@ class Subreddit extends Model
         $query->whereNull('last_checked');
         $query->orderBy('last_id', 'DESC');
 
-        return $query;
-    }
-
-    public function scopeFetchTimedToScrape($query)
-    {
-        $sub = $query->where('hour_delay', ">", 0)
-            ->whereRaw('last_checked < DATE_SUB(NOW(), INTERVAL hour_delay MINUTE)');
         return $query;
     }
 

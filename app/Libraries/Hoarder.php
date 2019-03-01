@@ -34,6 +34,18 @@ class Hoarder
 		self::getSaveLocation();
 	}
 
+	public function isWritable()
+	{
+		$path = Storage::disk('local')
+		->getAdapter()
+		->getPathPrefix();
+
+		if(!is_writable($path)) {
+			throw new Exception("Error: {$path} is not writable", 1);
+		}
+	}
+
+
 	public function setSaveLocation($saveLocation='')
 	{
 		$this->saveLocation = $saveLocation;
