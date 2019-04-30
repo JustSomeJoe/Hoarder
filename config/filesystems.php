@@ -45,7 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => 'E:/hoarder_download_test/',
+            'root' => env('DOWNLOAD_PATH'),
         ],
 
         'public' => [

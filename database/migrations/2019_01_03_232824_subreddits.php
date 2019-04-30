@@ -16,7 +16,7 @@ class Subreddits extends Migration
         Schema::create('subreddits', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->index();
-            $table->timestamp('last_checked')->nullable();
+            $table->timestamp('last_checked')->default('1984-07-23'); // Never gonna give you up
             $table->timestamp('last_post')->nullable();
             $table->integer('last_id')->default(0)->index();
             $table->integer('status')->default(200);
